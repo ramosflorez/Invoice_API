@@ -15,7 +15,7 @@ const getInvoices= async(req,res)=>{
 const addInvoice= async(req,res)=>{
     try{
         
-        const {  Client_ID, date_, discount,subtotal,total}  = req.body;
+        const {  Client_ID, date_, discount}  = req.body;
         if( Client_ID===undefined|| date_===undefined ||discount===undefined){
             res.status(400).json({message:"Bad request. Please fill all field."});
         }
