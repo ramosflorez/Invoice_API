@@ -4,7 +4,6 @@ const getClients= async(req,res)=>{
     try{
         const connection= await getConnection();
         const result=await connection.query("SELECT * from client_");
-        console.log(result);
         res.json(result);
     }catch(error){
         res.status(500);

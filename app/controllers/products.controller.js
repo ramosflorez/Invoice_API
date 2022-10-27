@@ -3,7 +3,7 @@ const getProducts= async(req,res)=>{
     try{
         const connection= await getConnection();
         const result=await connection.query("SELECT * from product");
-        console.log(result);
+        
         res.json(result);
     }catch(error){
         res.status(500);
@@ -14,7 +14,7 @@ const getProducts= async(req,res)=>{
 
 const addProduct= async(req,res)=>{
     try{
-        console.log(req.body)
+        
         const { Product_ID, Product_name, Product_descr, Price }  = req.body;
         if(Product_ID===undefined || Product_name===undefined|| Product_descr===undefined|| Price===undefined){
             res.status(400).json({message:"Bad request. Please fill all field."});
