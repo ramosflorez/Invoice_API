@@ -13,7 +13,7 @@ var cors = require('cors');
 app.use(cors());
 
 //settings
-app.set("port",process.env.PORT ||3005);
+app.set("port",process.env.PORT || 3005);
 
 //middlewares
 
