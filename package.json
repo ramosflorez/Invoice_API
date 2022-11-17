@@ -2,7 +2,7 @@
   "name": "invoice_api",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "nodemon --exec npm run babel-node index.js",
     "babel-node": "babel-node --preset=@babel/preset-env",

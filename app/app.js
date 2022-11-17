@@ -8,12 +8,10 @@ import ProductsRoutes from "../app/routes/product.route.js";
 import InvoiceRoutes from "../app/routes/invoice.route.js";
 
 const app=express();
-var cors = require('cors');
 
-app.use(cors());
 
 //settings
-app.set("port",process.env.PORT || 3005);
+app.set("port",process.env.PORT || 5005);
 
 //middlewares
 
