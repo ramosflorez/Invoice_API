@@ -1,7 +1,7 @@
-import {createPool} from "mysql2/promise";
+import mysql from "promise-mysql";
 import config from "./config.js";
 
-const connection=createPool({
+const connection=mysql.createPool({
     host:config.host,
     database:config.database,
     user:config.user,
