@@ -1,4 +1,4 @@
-import {getConnection} from "../../config/connection";
+import {getConnection} from "../../config/connection.js";
 const getInvoice= async(req,res)=>{
     try{
         const invoice_ID=parseInt(req.params.invoice_ID);

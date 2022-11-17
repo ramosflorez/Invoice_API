@@ -1,11 +1,11 @@
 import express, { json } from "express";
 import morgan from "morgan";
 //Routes
-import clientRoutes from "../app/routes/clients.route";
-import DetailsRoutes from "../app/routes/invoice_details.route";
-import InvoicesRoutes from "../app/routes/invoices.route";
-import ProductsRoutes from "../app/routes/product.route";
-import InvoiceRoutes from "../app/routes/invoice.route";
+import clientRoutes from "../app/routes/clients.route.js";
+import DetailsRoutes from "../app/routes/invoice_details.route.js";
+import InvoicesRoutes from "../app/routes/invoices.route.js";
+import ProductsRoutes from "../app/routes/product.route.js";
+import InvoiceRoutes from "../app/routes/invoice.route.js";
 
 const app=express();
 var cors = require('cors');

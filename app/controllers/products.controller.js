@@ -1,4 +1,4 @@
-import {getConnection} from "../../config/connection";
+import {getConnection} from "../../config/connection.js";
 const getProducts= async(req,res)=>{
     try{
         const connection= await getConnection();

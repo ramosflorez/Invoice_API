@@ -1,5 +1,5 @@
 import { request } from "express";
-import {getConnection} from "../../config/connection"
+import {getConnection} from "../../config/connection.js"
 const getClients= async(req,res)=>{
     try{
         const connection= await getConnection();
