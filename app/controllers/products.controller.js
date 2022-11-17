@@ -15,11 +15,11 @@ const getProducts= async(req,res)=>{
 const addProduct= async(req,res)=>{
     try{
         
-        const { Product_ID, Product_name, Product_descr, Price }  = req.body;
-        if(Product_ID===undefined || Product_name===undefined|| Product_descr===undefined|| Price===undefined){
+        const { Product_ID, Product_name, Product_descr, Price, category,image }  = req.body;
+        if(Product_ID===undefined || Product_name===undefined|| Product_descr===undefined|| Price===undefined ||category===undefined||image===undefined){
             res.status(400).json({message:"Bad request. Please fill all field."});
         }
-        const product={ Product_ID, Product_name, Product_descr, Price } ;
+        const product={ Product_ID, Product_name, Product_descr, Price,category,image } ;
         const connection= await getConnection();
         const result=await connection.query("INSERT INTO product SET ? ",product);
 

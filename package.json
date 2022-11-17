@@ -6,6 +6,7 @@
     "dev": "nodemon --exec npm run babel-node index.js",
     "babel-node": "babel-node --preset=@babel/preset-env",
     "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "author": "",
   "license": "ISC",

@@ -14,11 +14,13 @@ const getClients= async(req,res)=>{
 
 const addClient= async(req,res)=>{
     try{
-        const { Client_name, Point_of_Contact, Phone_Number, Email }  = req.body;
-        if(Client_name===undefined || Point_of_Contact===undefined|| Phone_Number===undefined|| Email===undefined){
+        //el rol debe ir default client o costumer
+        const role="client";
+        const { Client_name,  password, Email }  = req.body;
+        if(Client_name===undefined || password===undefined|| Email===undefined){
             res.status(400).json({message:"Bad request. Please fill all field."});
         }
-        const client={ Client_name, Point_of_Contact, Phone_Number, Email } ;
+        const client={ Client_name, role, password, Email } ;
         const connection= await getConnection();
         const result=await connection.query("INSERT INTO client_ SET ? ",client);
         res.json({message:"Client created successfully"});
