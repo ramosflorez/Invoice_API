@@ -5,5 +5,5 @@ export default{
     user:process.env.USER,
     password:process.env.password,
     database:process.env.DATABASE,
-    port:process.env.port
+    port:process.env.DB_port
 }
