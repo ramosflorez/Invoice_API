@@ -4,5 +4,6 @@ import { methods as clientController } from "../controllers/clients.controller.j
 const router=Router();
 router.get("/",clientController.getClients);
 router.post("/",clientController.addClient);
+router.post("/getclient",clientController.getClient);
 
 export default router;
