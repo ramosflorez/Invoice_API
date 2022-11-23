@@ -20,13 +20,15 @@ const addClient= async(req,res)=>{
         const { Client_name,  password, Email }  = req.body;
         if(Client_name===undefined || password===undefined|| Email===undefined){
             res.status(400).json({message:"Bad request. Please fill all field."});
+        }else{
+            const client={ Client_name, role, password, Email } ;
+            const connection= await getConnection();
+     
+            const result=await connection.query("INSERT INTO client_ SET ? ",client);
+            res.json({message:"Client created successfully"});
+    
         }
-        const client={ Client_name, role, password, Email } ;
-        const connection= await getConnection();
- 
-        const result=await connection.query("INSERT INTO client_ SET ? ",client);
-        res.json({message:"Client created successfully"});
-
+        
     }catch(error){
         res.status(500);
         res.send(error.menssage);
