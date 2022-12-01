@@ -3,5 +3,5 @@ import { methods as ProductsController } from "../controllers/products.controlle
 const router=Router();
 router.get("/",ProductsController.getProducts);
 router.post("/",ProductsController.addProduct);
-
+router.get("/:category",ProductsController.getProductsBycategory); 
 export default router;

@@ -9,7 +9,6 @@ import InvoiceRoutes from "../app/routes/invoice.route.js";
 
 const app=express();
 
-
 //settings
 app.set("port",process.env.PORT || 5005);
 

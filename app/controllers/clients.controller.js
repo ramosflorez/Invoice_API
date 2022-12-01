@@ -24,8 +24,11 @@ const addClient= async(req,res)=>{
             const client={ Client_name, role, password, Email } ;
             const connection= await getConnection();
      
-            const result=await connection.query("INSERT INTO client_ SET ? ",client);
-            res.json({message:"Client created successfully"});
+            const result=await connection.query("INSERT INTO client_ SET ? ",client,function(error,results){
+                if (error) throw error
+                
+                res.json(results.insertId);
+            });
     
         }
         

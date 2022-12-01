@@ -33,7 +33,22 @@ const addProduct= async(req,res)=>{
    
 };
 
+
+const getProductsBycategory= async(req,res)=>{
+    try{
+        const category=req.params.category;
+        const connection= await getConnection();
+        const result=await connection.query("SELECT * from product where category=? ",category);
+        
+        res.json(result);
+    }catch(error){
+        res.status(500);
+        res.send(error.menssage);
+    }
+}; 
+
 export const methods={
     getProducts,
-    addProduct
+    addProduct,
+    getProductsBycategory
 }
